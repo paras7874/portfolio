@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paras Marwadi | Senior Fullstack & Cloud Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030507;
+            --surface: #0a0e14;
+            --accent: #00d2ff;
+            --accent-glow: rgba(0, 210, 255, 0.3);
+            --text: #ffffff;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 8%; position: fixed; width: 100%; top: 0;
+            backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); z-index: 1000;
+        }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 10% 5rem;
+            display: flex; align-items: center; gap: 4rem;
+            min-height: 90vh;
+        }
+
+        .profile-area { position: relative; }
+        .profile-img {
+            width: 280px; height: 280px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            background: var(--surface);
+        }
+        .img-glow {
+            position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+            background: linear-gradient(45deg, var(--accent), transparent);
+            border-radius: 28px; z-index: -1; filter: blur(15px); opacity: 0.3;
+        }
+
+        .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1rem; }
+        .hero-content p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
+
+        /* Skills Grid */
+        .section-title { font-size: 2rem; margin-bottom: 3rem; text-align: center; }
+        .container { padding: 5rem 10%; }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            padding: 2rem; border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+        .skill-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .skill-card h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-family: 'Fira Code', monospace; }
+
+        /* Projects Section */
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+            align-items: center;
+        }
+        .project-info h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .project-info p { color: var(--text-dim); margin-bottom: 1.5rem; }
+        
+        /* DevOps Terminal Mockup */
+        .terminal {
+            background: #000; border-radius: 12px; padding: 20px;
+            font-family: 'Fira Code', monospace; font-size: 0.8rem;
+            border: 1px solid #333; box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .t-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+        
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 8rem; }
+            .project-card { grid-template-columns: 1fr; padding: 1.5rem; }
+            .hero-content p { margin: 0 auto 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PARAS<span>.MARWADI</span></div>
+        <div style="font-size: 0.8rem; color: var(--text-dim);">CLOUD & FULLSTACK ARCHITECT</div>
+    </nav>
+
+    <section class="hero">
+        <div class="profile-area reveal">
+            <div class="img-glow"></div>
+            <img src="docterimg1.jpg" alt="Paras Marwadi" class="profile-img">
+        </div>
+        <div class="hero-content reveal">
+            <h1>Engineering Scalable <br><span>Digital Solutions.</span></h1>
+            <p>Full-Stack Developer and Cloud Engineer specializing in Azure/AWS infrastructure and robust web architectures.</p>
+            <div class="skill-tags">
+                <span class="tag">Azure Certified</span>
+                <span class="tag">Fullstack Logic</span>
+                <span class="tag">DevOps</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container reveal">
+        <h2 class="section-title">Technical Ecosystem</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Frontend / Logic</h3>
+                <div class="skill-tags">
+                    <span class="tag">React</span><span class="tag">JS (ES6+)</span><span class="tag">Bootstrap</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Backend / Cloud</h3>
+                <div class="skill-tags">
+                    <span class="tag">Django</span><span class="tag">PHP</span><span class="tag">AWS EC2</span><span class="tag">Azure VM</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Automation / Ops</h3>
+                <div class="skill-tags">
+                    <span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Linux/Unix</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container reveal">
+        <h2 class="section-title">Major Implementations</h2>
+        
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Food Waste Management System</h3>
+                <p>A full-stack coordination engine connecting hotels and NGOs. Implemented role-based auth and real-time status tracking to optimize food distribution logistics.</p>
+                <div class="skill-tags">
+                    <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Fullstack Logic</span>
+                </div>
+            </div>
+            <div class="terminal">
+                <div style="margin-bottom: 10px;"><span class="t-dot" style="background:#ff5f56"></span><span class="t-dot" style="background:#ffbd2e"></span><span class="t-dot" style="background:#27c93f"></span></div>
+                <div style="color: var(--accent)">> Initializing Food-Link System...</div>
+                <div style="color: #fff">> Connecting MySQL Cluster... [OK]</div>
+                <div style="color: #fff">> NGO Request Received: #1042</div>
+                <div style="color: #27c93f">> Status: Matching with Hotel_Alpha</div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Cross-Platform Cloud Infrastructure</h3>
+                <p>Engineered highly available environments on AWS EC2 (Apache) and Azure VMs (IIS). Implemented Azure Blob Object Replication for multi-region data redundancy.</p>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Blob Storage</span><span class="tag">Redundancy</span>
+                </div>
+            </div>
+            <div class="terminal">
+                <div style="margin-bottom: 10px;"><span class="t-dot" style="background:#ff5f56"></span><span class="t-dot" style="background:#ffbd2e"></span><span class="t-dot" style="background:#27c93f"></span></div>
+                <div style="color: var(--accent)">> azure storage-account replication set</div>
+                <div style="color: #fff">> Source: East US -> Target: West Europe</div>
+                <div style="color: #27c93f">> Replication State: ACTIVE</div>
+                <div style="color: #fff">> Uptime Status: 99.9%</div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="padding: 5rem 10%; text-align: center; border-top: 1px solid var(--border);">
+        <p style="color: var(--text-dim); margin-bottom: 1rem;">Contact: PARAS LAXMANBHAI MARWADI</p>
+        <div class="skill-tags" style="justify-content: center;">
+            <span class="tag">Linux</span><span class="tag">Networking</span><span class="tag">Azure</span>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
